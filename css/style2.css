@@ -111,17 +111,191 @@ header{
   border-radius: 0.6rem;
 }
 
+.the h2{
+  font-size: 2.2rem;
+  margin: 10px 0;
+}
+
+.the p{
+  font-size: 2rem;
+  margin: 10px;
+}
+
+.the button{
+  margin: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  background: rgb(172, 131, 90);
+  color: white;
+  border: none;
+}
+
+.the-des{
+  text-align: center;
+  margin: 8px;
+  padding: 8px;
+}
+
+.the-des p{
+  font-size: 1.5rem;
+  margin: 10px;
+}
+
+.th-wh{
+  display: flex;
+  margin: 8px;
+  justify-content: center;
+}
 
 
+.th-wh div{
+  width: 30%;
+  background: oldlace;
+  box-shadow: 0 4px 10px black;
+  margin: 8px;
+  text-align: center;
+  border-radius: 0.6rem;
+  padding: 8px;
+  font-size: 1.3rem;
+}
+
+.th-wh ul{
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 4px;
+  font-size: 1.5rem;
+  margin: 10% 0;
+}
+
+.get{
+  margin: 8px;
+  padding: 10px;
+  text-align: center;
+  background: white;
+  border-radius: 0.6rem;
+}
+
+.get h2{
+  margin: 10px 0;
+}
+
+.get h3{
+  margin: 10px 0;
+}
+
+.get button{
+  margin: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  background: rgb(172, 131, 90);
+  color: white;
+  border: none;
+}
+
+.ch{
+  display: flex;
+  background: white;
+  border-radius: 0.6rem;
+  margin: 8px 10%;
+}
+
+.ch div{
+  margin: 3% 5%;
+}
+
+.ch img{
+  height: 330px;
+  width: 230px;
+  margin-left: 5%;
+  border-radius: 0.6rem;
+}
+
+.ch h2{
+  font-size: 2.2rem;
+  margin: 40px 0 10px 0;
+}
+
+.ch p{
+  font-size: 2rem;
+  margin: 20px 10px;
+}
+
+.ch button{
+  margin: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  background: rgb(172, 131, 90);
+  color: white;
+  border: none;
+}
+
+.ch-des{
+  text-align: center;
+  margin: 8px;
+  padding: 8px;
+}
+
+.ch-des p{
+  font-size: 1.5rem;
+  margin: 10px;
+}
+
+.ch-wh{
+  display: flex;
+  margin: 8px;
+  justify-content: center;
+}
 
 
+.ch-wh div{
+  width: 45%;
+  background: oldlace;
+  box-shadow: 0 4px 10px black;
+  margin: 8px;
+  text-align: center;
+  border-radius: 0.6rem;
+  padding: 8px;
+  font-size: 1.3rem;
+}
 
+.ch-wh h3{
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
 
+.ch-wh ul{
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 4px;
+  font-size: 1.5rem;
+  margin:  0;
+}
 
+.ch-note{
+  margin: 8px;
+  padding: 10px;
+  text-align: center;
+  background: white;
+  border-radius: 0.6rem;
+}
 
+.ch-note h2{
+  margin: 10px 0;
+}
 
-
-
+.ch-note button{
+  margin: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  background: rgb(172, 131, 90);
+  color: white;
+  border: none;
+  width: 20%;
+}
 
 footer{
   background:  rgb(214, 167, 119);
@@ -159,18 +333,166 @@ footer h3{
   grid-template-columns: 1fr 1fr;
 }
 
-@media (max-width: 800px) {
-  
+@media (max-width: 1200px){
+  main{
+    margin: 0 5%;
+  }
+
+  .the, .ch{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .the div, .ch div{
+    margin: 20px 0;
+  }
+
+  .the img, .ch img{
+    margin: 10px auto;
+    width: min(100%, 230px);
+    height: auto;
+  }
+
+  .th-wh, .ch-wh{
+    flex-wrap: wrap;
+  }
+
+  .th-wh div, .ch-wh div{
+    width: 45%;
+    min-width: 260px;
+    margin: 10px auto;
+  }
+
+  .ch-note button{
+    width: 40%;
+    min-width: 200px;
+  }
+
+  .footer{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer div{
+    margin: 10px 5%;
+  }
 }
 
-@media (max-width: 600px) {
-  
+@media (max-width: 768px){
+  header{
+    flex-direction: column;
+    height: auto;
+    padding: 12px 0;
+  }
+
+  body ul{
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  main{
+    margin: 0 3%;
+    font-size: 1.1rem;
+  }
+
+  .the h2, .ch h2{
+    font-size: 1.8rem;
+  }
+
+  .the p, .the-des p, .ch p, .ch-des p{
+    font-size: 1.2rem;
+  }
+
+  .th-wh, .ch-wh{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .th-wh div, .ch-wh div{
+    width: 90%;
+    max-width: 380px;
+    margin: 10px 0;
+  }
+
+  .ch-note button{
+    width: 90%;
+    max-width: 220px;
+  }
+
+  .footer{
+    flex-direction: column;
+  }
+
+  .footer div{
+    margin: 10px 0;
+  }
+
+  .links ul{
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 400px) {
-  
+@media (max-width: 480px){
+  main{
+    margin: 0 2%;
+    font-size: 1rem;
+  }
+
+  .the, .ch{
+    margin: 8px 0;
+  }
+
+  .the img, .ch img{
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+  }
+
+  .the h2, .ch h2{
+    font-size: 1.5rem;
+  }
+
+  .the p, .the-des p, .ch p, .ch-des p{
+    font-size: 1rem;
+    margin: 8px 0;
+  }
+
+  .the button, .get button, .ch button, .ch-note button{
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .th-wh div, .ch-wh div{
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  .th-wh ul, .ch-wh ul{
+    justify-content: center;
+  }
+
+  body ul{
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
 }
 
-@media (max-width: 200px) {
-  
+@media (max-width: 320px){
+  main{
+    margin: 0;
+  }
+
+  header, footer{
+    font-size: 1rem;
+  }
+
+  .the h2, .ch h2{
+    font-size: 1.3rem;
+  }
+
+  .the p, .the-des p, .ch p, .ch-des p{
+    font-size: 0.95rem;
+  }
 }
