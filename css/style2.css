@@ -106,7 +106,7 @@ header{
 
 .the img{
   height: 330px;
-  width: 230px;
+  width: 240px;
   margin-left: 5%;
   border-radius: 0.6rem;
 }
@@ -354,6 +354,10 @@ footer h3{
     height: auto;
   }
 
+  .the img{
+    width: 225px;
+  }
+
   .th-wh, .ch-wh{
     flex-wrap: wrap;
   }
@@ -398,10 +402,20 @@ footer h3{
 
   .the h2, .ch h2{
     font-size: 1.8rem;
+    margin: 0;
+  }
+
+  .the img, .ch img{
+    height: 260px;
+    margin: 0;
   }
 
   .the p, .the-des p, .ch p, .ch-des p{
     font-size: 1.2rem;
+  }
+
+  .the:nth-child(2), .ch:nth-child(2){
+    margin-top: 0;
   }
 
   .th-wh, .ch-wh{
@@ -420,7 +434,7 @@ footer h3{
     max-width: 220px;
   }
 
-  .footer{
+  /* .footer{
     flex-direction: column;
   }
 
@@ -430,7 +444,7 @@ footer h3{
 
   .links ul{
     grid-template-columns: 1fr;
-  }
+  } */
 }
 
 @media (max-width: 480px){
@@ -459,7 +473,7 @@ footer h3{
   }
 
   .the button, .get button, .ch button, .ch-note button{
-    width: 100%;
+    width: 90%;
     margin: 10px 0;
   }
 

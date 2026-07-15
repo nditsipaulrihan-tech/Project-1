@@ -282,7 +282,7 @@ footer h3{
     max-width: 220px;
   }
 
-  .footer{
+  /* .footer{
     flex-direction: column;
   }
 
@@ -292,7 +292,7 @@ footer h3{
 
   .links ul{
     grid-template-columns: 1fr;
-  }
+  } */
 }
 
 @media (max-width: 480px){
@@ -302,7 +302,7 @@ footer h3{
   }
 
   .my-s div{
-    width: 100%;
+    width: 70%;
     margin: 8px 0;
   }
 
@@ -317,7 +317,7 @@ footer h3{
 
   .my-s button,
   .g-e button{
-    width: 100%;
+    width: 90%;
   }
 
   .g-e{

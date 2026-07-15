@@ -362,7 +362,7 @@ footer h3{
     font-size: 1.1rem;
   }
 
-  .footer{
+  /* .footer{
     flex-direction: column;
   }
 
@@ -372,7 +372,7 @@ footer h3{
 
   .links ul{
     grid-template-columns: 1fr;
-  }
+  } */
 }
 
 @media (max-width: 480px){
