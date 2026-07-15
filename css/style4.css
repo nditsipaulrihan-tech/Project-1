@@ -1,0 +1,450 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-image: url(../img/bac.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+}
+
+body ul{
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0;
+  font-size: 1em;
+}
+
+a:link,a:visited,a:active{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+a:hover{
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover{
+  background: rgb(186, 162, 130);
+  transform: scale(1.1);
+  color: white;
+}
+
+header, footer{
+  padding: 0;
+  margin: 0;
+}
+header select{
+  background-color: rgb(214, 167, 119);
+  border: none;
+  color: white;
+}
+
+footer select{
+  background-color: rgb(214, 167, 119);
+  border: none;
+  color: white;
+}
+
+
+button{
+  font-size: 1.2rem;
+}
+
+main{
+  padding: 0;
+  margin: 0 10%;
+  background: transparent;
+}
+
+header{
+  background:  rgb(214, 167, 119);
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  font-size: 1.2rem;
+  height: 40px;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.logo img{
+  height:80px;
+  margin: 0 2rem 0 0;
+  padding: 0;
+}
+
+.contact{
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 10px 0;
+}
+
+.contact p{
+  margin: 0 10%;
+}
+
+.form-c{
+  background: oldlace;
+  border-radius: 0.4rem;
+  margin: 8px 20%;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px black;
+}
+
+.form-c label{
+  margin: 4px;
+  text-align: left;
+}
+
+.form-c input{
+  width: 80%;
+  padding: 10px;
+  border-radius: 0.6rem;
+  border: none;
+  margin: 8px 0;
+}
+
+.form-c textarea{
+  width: 80%;
+  margin: 8px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 0.6rem;
+}
+
+.form-c select{
+  width: 80%;
+  margin: 8px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 0.6rem;
+}
+
+.form-c button{
+  color: white;
+  background: rgb(214, 167, 119);
+  margin: 4px 0;
+  width: 80%;
+  height: 30px;
+  border: none;
+  border-radius: 0.6rem;
+}
+
+.fr-h{
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 8px;
+  padding: 0 15%;
+}
+
+.fr-f{
+  display: flex;
+  font-size: 1.5rem;
+  border-radius: 0.6rem;
+  background: oldlace;
+  padding: 3% 10%;
+  margin: 8px 5%;
+}
+
+.fr-f div{
+  margin: 0 3%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.fr-f img{
+  height: 300px;
+  width: 260px;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 8px black;
+}
+
+.fr-f p{
+  text-align: center;
+  padding: 0;
+  margin: 5% 0;
+  font-size: 1.7rem;
+}
+
+.fr-f input{
+  width: 80%;
+  padding: 10px;
+  border-radius: 0.6rem;
+  border: none;
+  margin: 8px 0;
+}
+
+.fr-f button{
+  color: white;
+  background: rgb(214, 167, 119);
+  margin: 8px 0;
+  width: 80%;
+  height: 30px;
+  border: none;
+  border-radius: 0.6rem;
+}
+
+.fr-wh{
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 8px 5%;
+  background: white;
+  border-radius: 0.6rem;
+  padding: 8px;
+}
+
+.fr-wh ul{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+}
+
+
+
+
+
+
+footer{
+  background:  rgb(214, 167, 119);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+footer h3{
+  margin: 0.5em 0;
+  color: black;
+}
+
+.footer{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+
+}
+
+.footer ul{
+  list-style-type: none;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.footer div{
+  margin: 1% 10%;
+}
+
+.links ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+@media (max-width: 1200px){
+  main{
+    margin: 0 5%;
+  }
+
+  .form-c{
+    margin: 8px 10%;
+  }
+
+  .fr-h{
+    padding: 0 8%;
+    font-size: 1.2rem;
+  }
+
+  .fr-f{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3% 5%;
+    margin: 8px 3%;
+  }
+
+  .fr-f div{
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .fr-f img{
+    width: min(100%, 260px);
+    height: auto;
+  }
+
+  .fr-f input,
+  .fr-f button,
+  .form-c input,
+  .form-c textarea,
+  .form-c select,
+  .form-c button{
+    width: 90%;
+    max-width: 420px;
+  }
+
+  .fr-wh ul{
+    font-size: 1.5rem;
+  }
+
+  .footer{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer div{
+    margin: 10px 5%;
+  }
+}
+
+@media (max-width: 768px){
+  header{
+    flex-direction: column;
+    height: auto;
+    padding: 12px 0;
+  }
+
+  body ul{
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  main{
+    margin: 0 3%;
+  }
+
+  .contact{
+    font-size: 1.2rem;
+  }
+
+  .contact p{
+    margin: 0 4%;
+  }
+
+  .form-c{
+    margin: 8px 3%;
+    padding: 10px 4%;
+  }
+
+  .fr-h{
+    padding: 0 4%;
+    font-size: 1.1rem;
+  }
+
+  .fr-f{
+    flex-direction: column;
+    margin: 8px 3%;
+    padding: 3% 4%;
+  }
+
+  .fr-wh{
+    margin: 8px 3%;
+    font-size: 1.1rem;
+  }
+
+  .footer{
+    flex-direction: column;
+  }
+
+  .footer div{
+    margin: 10px 0;
+  }
+
+  .links ul{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px){
+  main{
+    margin: 0 2%;
+  }
+
+  .contact{
+    font-size: 1rem;
+  }
+
+  .form-c{
+    margin: 8px 1%;
+    padding: 10px 3%;
+  }
+
+  .form-c input,
+  .form-c textarea,
+  .form-c select,
+  .form-c button,
+  .fr-f input,
+  .fr-f button{
+    width: 100%;
+  }
+
+  .fr-h{
+    font-size: 1rem;
+    padding: 0 2%;
+  }
+
+  .fr-f{
+    margin: 8px 1%;
+    padding: 3% 2%;
+  }
+
+  .fr-wh{
+    margin: 8px 1%;
+    padding: 8px 4%;
+  }
+
+  .fr-f p{
+    font-size: 1.2rem;
+  }
+
+  .fr-wh ul{
+    font-size: 1.2rem;
+  }
+
+  body ul{
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 320px){
+  main{
+    margin: 0;
+  }
+
+  header, footer{
+    font-size: 1rem;
+  }
+
+  .contact,
+  .fr-h,
+  .fr-wh{
+    font-size: 0.95rem;
+  }
+
+  .fr-f p{
+    font-size: 1rem;
+  }
+}
+

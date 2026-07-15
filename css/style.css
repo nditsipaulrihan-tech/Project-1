@@ -1,0 +1,529 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-image: url(../img/bac.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+}
+
+body ul{
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0;
+  font-size: 1em;
+}
+
+a:link,a:visited,a:active{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+a:hover{
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover{
+  background: rgb(186, 162, 130);
+  transform: scale(1.1);
+  color: white;
+}
+
+header, footer{
+  padding: 0;
+  margin: 0;
+}
+header select{
+  background-color: rgb(214, 167, 119);
+  border: none;
+  color: white;
+}
+
+footer select{
+  background-color: rgb(214, 167, 119);
+  border: none;
+  color: white;
+}
+
+
+button{
+  font-size: 1.2rem;
+}
+
+main{
+  padding: 0;
+  margin: 0 10%;
+  background: transparent;
+}
+
+header{
+  background:  rgb(214, 167, 119);
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  font-size: 1.2rem;
+  height: 40px;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.logo img{
+  height:80px;
+  margin: 0 2rem 0 0;
+  padding: 0;
+}
+
+.hero{
+  background-color: oldlace;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 0.5em 0;
+  background: transparent;
+}
+
+.hero h1{
+  font-size: 3rem;
+  padding: 2% 0 0 0;
+}
+.hero p{
+  padding: 0 8%;
+  margin: 0.5em 1em;
+  font-size: 2rem;
+}
+
+.hero button{
+  color: white;
+  background-color: rgb(172, 131, 90);
+  border: none;
+  border-radius: 0.4rem;
+  width: 300px;
+  height: 40px;
+  margin: 1em 2rem;
+}
+
+.about-snap{
+  display: flex;
+  padding: 0 8%;
+  background: white;
+  border: none;
+  border-radius: 0.6rem;
+  margin: 10px 0;
+}
+
+.about-snap img{
+  height: 350px;
+  width: 290px;
+  margin: 15% 10%;
+  border-radius: 0.6rem;
+}
+
+.about-snap .e{
+  margin: 6% 1% 6% 8% ;
+  
+}
+
+.e h2{
+  font-size: 2rem;
+}
+
+.e p{
+  margin: 2rem 0.3rem;
+  font-size: 1.8rem;
+  padding: 0;
+}
+
+.e button{
+  color: white;
+  background-color: rgb(172, 131, 90);
+  border: none;
+  border-radius: 0.4rem;
+  height: 40px;
+  width: 250px;
+}
+
+.my-books{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+}
+
+.my-books h2{
+  font-size: 1.7rem;
+  margin: 8px 0;
+}
+
+.mbl, .mbr{
+  border: none;
+  border-radius: 0.3rem;
+  background-color: oldlace;
+  margin: 0 1%;
+  padding: 1%;
+  height: 540px;
+  box-shadow: 0 4px 10px black;
+}
+
+.my-books img{
+  height: 280px;
+  width: 190px;
+  margin: 0.4em 0;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 8px black;
+}
+
+.my-books p{
+  padding: 1% 6%;
+  margin: 0 4%;
+  font-size: 1.4rem;
+}
+
+.my-books button{
+  color: white;
+  background-color: rgb(172, 131, 90);
+  border: none;
+  border-radius: 0.3em;
+  width: 70%;
+  height: 40px;
+  margin: 8px 0;
+}
+
+.testimony{
+  background: white;
+  border-radius: 0.4rem 0.4rem 0 0;
+  text-align: center;
+  margin: 8px 0 0 0;
+}
+
+.testimony h2{
+  font-size: 1.6rem;
+  margin: 20px 0 0 0;
+  padding: 4px 0;
+}
+
+.testimony p{
+  font-size: 1.4rem;
+  padding: 0 15%;
+}
+
+.free-r{
+  background: white;
+  border-radius: 0 0 0.4rem 0.4rem;
+  margin: 0 0 8px 0;
+  text-align: center;
+  padding: 8px 10%;
+  font-size: 1.4rem;
+}
+
+.free-r button{
+  border: none;
+  border-radius: 0.4rem;
+  background: rgb(172, 131, 90);
+  color: white;
+  width: 230px;
+  height: 30px;
+  margin: 1em;
+}
+
+.h-abt{
+  display: flex;
+  background: white;
+  border-radius: 0.4rem;
+  margin: 8px;
+}
+
+.h-abt h2{
+  font-size: 2.2rem;
+  margin: 8px 20px;
+}
+
+.h-abt h3{
+  margin: 4px 40px;
+}
+.h-abt p{
+  margin: 8px 30px;
+  font-size: 1.2rem;
+}
+
+.h-abt img{
+  height: 380px;
+  width: 290px;
+  margin: 10% 20px;
+  border-radius: 0.6rem;
+}
+
+.miss{
+  text-align: center;
+  margin: 8px;
+  font-size: 1.1rem;
+}
+
+.miss p{
+  margin: 8px;
+}
+
+.wh-abt{
+  display: flex;
+  font-size: 1.1rem;
+}
+
+.wh-abt div{
+  background: oldlace;
+  margin: 8px;
+  border-radius: 0.4rem;
+  box-shadow: 0 4px 8px black;
+}
+
+.wh-abt h3{
+  padding: 4px 10%;
+}
+
+.wh-abt p{
+  margin: 8px;
+}
+
+.note{
+  margin: 8px;
+  text-align: center;
+  font-size: 1.4rem;
+  background: white;
+  border-radius: 0.4rem;
+}
+
+.note h2{
+  margin: 8px;
+}
+
+.note p{
+  margin: 8px 10%;
+}
+
+.note button{
+  border: none;
+  border-radius: 0.4rem;
+  background: rgb(172, 131, 90);
+  color: white;
+  width: 230px;
+  height: 30px;
+  margin: 0 1em 0.4em 1em;
+}
+
+
+footer{
+  background:  rgb(214, 167, 119);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+footer h3{
+  margin: 0.5em 0;
+  color: black;
+}
+
+.footer{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+
+}
+
+.footer ul{
+  list-style-type: none;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.footer div{
+  margin: 1% 10%;
+}
+
+.links ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+
+@media (max-width: 1200px){
+  .about-snap, .h-abt{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-snap img, .h-abt img{
+    margin: 20px auto;
+  }
+
+  .e{
+    margin: 6% 1% 6% 1%;
+  }
+
+  .my-books{
+    flex-wrap: wrap;
+  }
+
+  .mbl, .mbr{
+    width: 45%;
+    min-width: 280px;
+    height: auto;
+    margin: 10px auto;
+  }
+
+  .footer{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px){
+  header{
+    flex-direction: column;
+    height: auto;
+    padding: 12px 0;
+  }
+
+  body ul{
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .logo img{
+    margin: 0 0 10px 0;
+  }
+
+  .hero h1{
+    font-size: 2.2rem;
+  }
+
+  .hero p, .e p, .my-books p, .testimony p, .h-abt p, .note p{
+    font-size: 1.1rem;
+  }
+
+  .hero button, .e button, .my-books button, .free-r button, .note button{
+    width: 90%;
+    max-width: 250px;
+  }
+
+  .about-snap, .h-abt{
+    padding: 0 4%;
+  }
+
+  .about-snap img, .h-abt img{
+    height: auto;
+    width: min(100%, 290px);
+  }
+
+  .wh-abt{
+    flex-direction: column;
+  }
+
+  .wh-abt div{
+    margin: 8px 0;
+  }
+
+  .footer{
+    flex-direction: column;
+  }
+
+  .footer div{
+    margin: 10px 0;
+  }
+
+  .links ul{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px){
+  main{
+    margin: 0 2%;
+  }
+
+  .hero h1{
+    font-size: 1.8rem;
+  }
+
+  .hero p{
+    padding: 0 4%;
+    margin: 0.5em 0.3em;
+    font-size: 1rem;
+  }
+
+  .about-snap{
+    padding: 0 3%;
+  }
+
+  .about-snap img, .h-abt img{
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+  }
+
+  .mbl, .mbr{
+    width: 100%;
+    min-width: 0;
+    margin: 10px 0;
+  }
+
+  .my-books p{
+    font-size: 1rem;
+  }
+
+  .testimony p, .free-r, .note p{
+    padding: 0 5%;
+    font-size: 1rem;
+  }
+
+  body ul{
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 320px){
+  main{
+    margin: 0;
+  }
+
+  header, footer{
+    font-size: 1rem;
+  }
+
+  .hero button, .e button, .my-books button, .free-r button, .note button{
+    width: 100%;
+  }
+
+  .hero h1{
+    font-size: 1.5rem;
+  }
+
+  .hero p, .e p, .my-books p, .testimony p, .free-r, .h-abt p, .note p{
+    font-size: 0.95rem;
+  }
+}

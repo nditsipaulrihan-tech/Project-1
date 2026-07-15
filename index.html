@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+  <title>Home</title>
+</head>
+<body>
+ 
+  <header>
+    <div class="logo">
+      <img src="./img/logom.png" alt="">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./pages/about.html">About</a></li>
+        <li><select id="selectBook" onchange="goToPage(this)">
+          <option value="book">Books</option>
+          <option value="dairy.html">The Dairy</option>
+          <option value="clarity.html">Clarity</option>
+        </select></li>
+        <!-- <li><a href="./pages/blog.html">Blog</a></li> -->
+        <li><a href="./pages/services.html">Services</a></li>
+        <li><a href="./pages/free.html">Free Resources</a></li>
+        <li><a href="./pages/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>She was not writing. She was living.</h1>
+      <p>Two books. One voice. One woman building something real. <br>
+        One line intro:
+        Welcome to Clarity With Kum Doris where honest writing meets real transformation.
+      </p>
+      <div>
+        <button><b>Get The Diary She Never Wrote</b></button>
+        <button><b>Get Clarity Before Hustle</b></button>
+      </div>
+    </section>
+
+    <section class="about-snap">
+      <div>
+        <img src="./img/1.jpg" alt="">
+      </div>
+      <div class="e">
+        <h2>ABOUT SNAPSHOT</h2>
+        <p><b>My name is Kum Doris Mbeuh.</b><br>
+          I am a daughter, an author, a researcher, and a guide for ambitious people finding theirs. Everything I write comes from a real place. I hope something here finds you.
+        </p>
+        <button><b>Read My Full Story</b></button>
+      </div>
+    </section>
+
+    <section class="my-books">
+        <div class="mbl">
+          <h2>The Dairy She Never Wrote</h2>
+          <img src="./img/th.png" alt="">
+          <p>She was not writing. She was living. A daughter's tribute to the mother who gave everything she never got. Available now in print and on Amazon.
+          </p>
+          <button><b>Get Your Copy</b></button>
+        </div>
+        <div class="mbr">
+          <h2>Clarity Before Hustle</h2>
+          <img src="./img/ch.jpg" alt="">
+          <p>Stop hustling in confusion. Start building with direction. Written for every ambitious person who is tired of working hard and going nowhere.</p>
+          <button><b>Get Your Copy</b></button>
+        </div>
+
+    </section>
+
+    <section class="testimony">
+      <h2>What readers are saying</h2>
+      <p>"Your book is a life changer. That is what I needed all these years."</p>
+      <p>"It is like you know what I am going through. Before I go through the book I will be a better version of myself."</p>
+    </section>
+
+    <section class="free-r">
+      <p>Not sure where to start? Start here.
+        Download my free Clarity Guide and take the first step toward finding your direction.</p>
+        <button><b>Get the Free Guide</b></button>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="footer">
+      <div class="links">
+        <h3>Quick Links</h3>
+        <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./pages/about.html">About</a></li>
+        <li><select id="selectBook" onchange="goToPage(this)">
+          <option value="book">Books</option>
+          <option value="dairy.html">The Dairy</option>
+          <option value="clarity.html">Clarity</option>
+        </select></li>
+        <!-- <li><a href="./pages/blog.html">Blog</a></li> -->
+        <li><a href="./pages/services.html">Services</a></li>
+        <li><a href="./pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Follow Me</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Me</h3>
+        <ul>
+          <li><a href="mailto:doris@claritywithdoriskum.com">Mail Me</a></li>
+          <li><a href="#">Text Me</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <small>&copy; 2026 - All rights reserved.</small>
+  </footer>
+  
+  <script src="./js/script.js"></script>
+</body>
+</html>

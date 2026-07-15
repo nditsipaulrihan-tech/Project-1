@@ -1,0 +1,353 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-image: url(../img/bac.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+}
+
+body ul{
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0;
+  font-size: 1em;
+}
+
+a:link,a:visited,a:active{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+a:hover{
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover{
+  background: rgb(186, 162, 130);
+  transform: scale(1.1);
+  color: white;
+}
+
+header, footer{
+  padding: 0;
+  margin: 0;
+}
+header select{
+  background-color: rgb(214, 167, 119);
+  border: none;
+  color: white;
+}
+
+footer select{
+  background-color: rgb(214, 167, 119);
+  border: none;
+  color: white;
+}
+
+
+button{
+  font-size: 1.2rem;
+}
+
+main{
+  padding: 0;
+  margin: 0 10%;
+  background: transparent;
+}
+
+header{
+  background:  rgb(214, 167, 119);
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  font-size: 1.2rem;
+  height: 40px;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.logo img{
+  height:80px;
+  margin: 0 2rem 0 0;
+  padding: 0;
+}
+
+main{
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+main ul{
+  list-style-type: none;
+  display: contents;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0;
+  font-size: 1em;
+}
+
+.my-s{
+  display: flex;
+  margin: 0;
+  justify-content: center;
+}
+
+.my-s div{
+  margin: 8px;
+  background: oldlace;
+  box-shadow: 0 4px 10px black;
+  font-size: 1.2rem;
+  width: 30%;
+  border-radius: 0.6rem;
+  position: relative;
+}
+
+.my-s h3{
+  font-size: 0.9rem;
+  margin: 8px 0 0 0;
+}
+
+.my-s img{
+  height: 200px;
+  width: 100%;
+  border-radius: 0.6rem 0.6rem 0 0;
+}
+
+.my-s p{
+  padding: 8px;
+  margin: 8px 0;
+}
+
+.my-s li{
+  margin: 2px 8px;
+}
+
+.my-s button{
+  color: white;
+  background-color: rgb(172, 131, 90);
+  border: none;
+  border-radius: 0.3em;
+  width: 70%;
+  height: 30px;
+  margin: 8px 0;
+}
+
+.g-e{
+  background: white;
+  border-radius: 0.6rem;
+  margin: 8px;
+  padding: 10px;
+}
+
+.g-e button{
+  color: white;
+  background-color: rgb(172, 131, 90);
+  border: none;
+  border-radius: 0.3em;
+  width: 30%;
+  height: 30px;
+  margin: 8px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+footer{
+  background:  rgb(214, 167, 119);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+footer h3{
+  margin: 0.5em 0;
+  color: black;
+}
+
+.footer{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+
+}
+
+.footer ul{
+  list-style-type: none;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.footer div{
+  margin: 1% 10%;
+}
+
+.links ul{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 1200px){
+  main{
+    margin: 0 5%;
+  }
+
+  .my-s{
+    flex-wrap: wrap;
+  }
+
+  .my-s div{
+    width: 45%;
+    min-width: 280px;
+    margin: 10px auto;
+  }
+
+  .g-e{
+    margin: 8px 2%;
+  }
+
+  .footer{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer div{
+    margin: 10px 5%;
+  }
+}
+
+@media (max-width: 768px){
+  header{
+    flex-direction: column;
+    height: auto;
+    padding: 12px 0;
+  }
+
+  body ul{
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  main{
+    margin: 0 3%;
+    font-size: 1.2rem;
+  }
+
+  .my-s{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .my-s div{
+    width: 90%;
+    max-width: 380px;
+    margin: 10px 0;
+  }
+
+  .g-e{
+    margin: 8px 2%;
+    padding: 10px 4%;
+  }
+
+  .g-e button{
+    width: 90%;
+    max-width: 220px;
+  }
+
+  .footer{
+    flex-direction: column;
+  }
+
+  .footer div{
+    margin: 10px 0;
+  }
+
+  .links ul{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px){
+  main{
+    margin: 0 2%;
+    font-size: 1rem;
+  }
+
+  .my-s div{
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  .my-s img{
+    height: 180px;
+  }
+
+  .my-s p,
+  .my-s li{
+    font-size: 1rem;
+  }
+
+  .my-s button,
+  .g-e button{
+    width: 100%;
+  }
+
+  .g-e{
+    margin: 8px 0;
+    padding: 10px 3%;
+  }
+
+  body ul{
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 320px){
+  main{
+    margin: 0;
+  }
+
+  header, footer{
+    font-size: 1rem;
+  }
+
+  .my-s h3{
+    font-size: 0.85rem;
+  }
+
+  .my-s p,
+  .my-s li{
+    font-size: 0.95rem;
+  }
+}
+
