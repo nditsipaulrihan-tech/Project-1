@@ -137,7 +137,7 @@ header{
   background-color: rgb(172, 131, 90);
   border: none;
   border-radius: 0.4rem;
-  width: 300px;
+  width: 35%;
   padding: 8px 0;
   margin: 1em 2rem;
 }
@@ -577,7 +577,7 @@ footer h3{
   }
 
   .hero button, .e button, .my-books button, .free-r button, .note button{
-    width: 100%;
+    width: 80%;
   }
 
   .hero h1{
