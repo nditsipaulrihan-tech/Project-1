@@ -91,6 +91,15 @@ header{
   padding: 0;
 }
 
+#bars{
+  display: none;
+}
+
+#bars:hover{
+  background: rgb(172, 131, 90);
+  color: white;
+}
+
 .hero{
   background-color: oldlace;
   position: relative;
@@ -507,6 +516,23 @@ footer h3{
   main{
     margin: 0 2%;
   }
+
+  #bars{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding:  0.2rem 0.2rem;
+    margin: 10px 20px;
+  }
+
+  .nav{
+  display: none;
+}
+
+.nav.active{
+  display: flex;
+}
 
   .hero h1{
     font-size: 1.8rem;

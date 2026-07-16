@@ -91,6 +91,15 @@ header{
   padding: 0;
 }
 
+#bars{
+  display: none;
+}
+
+#bars:hover{
+  background: rgb(172, 131, 90);
+  color: white;
+}
+
 .contact{
   text-align: center;
   font-size: 1.4rem;
@@ -218,11 +227,6 @@ header{
   text-align: center;
   font-size: 2rem;
 }
-
-
-
-
-
 
 footer{
   background:  rgb(214, 167, 119);
@@ -379,6 +383,23 @@ footer h3{
   main{
     margin: 0 2%;
   }
+
+  #bars{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding:  0.2rem 0.2rem;
+    margin: 10px 20px;
+  }
+
+  .nav{
+  display: none;
+}
+
+.nav.active{
+  display: flex;
+}
 
   .contact{
     font-size: 1rem;

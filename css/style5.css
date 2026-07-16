@@ -93,9 +93,22 @@ header{
 }
 
 
+#bars{
+  display: none;
+}
 
+#bars:hover{
+  background: rgb(172, 131, 90);
+  color: white;
+}
 
+.nav{
+  display: none;
+}
 
+.nav.active{
+  display: flex;
+}
 
 
 

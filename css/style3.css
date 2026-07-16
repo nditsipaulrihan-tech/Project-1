@@ -91,6 +91,15 @@ header{
   padding: 0;
 }
 
+#bars{
+  display: none;
+}
+
+#bars:hover{
+  background: rgb(172, 131, 90);
+  color: white;
+}
+
 main{
   font-size: 1.5rem;
   text-align: center;
@@ -168,16 +177,6 @@ main ul{
   height: 30px;
   margin: 8px 0;
 }
-
-
-
-
-
-
-
-
-
-
 
 footer{
   background:  rgb(214, 167, 119);
@@ -300,6 +299,23 @@ footer h3{
     margin: 0 2%;
     font-size: 1rem;
   }
+
+  #bars{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding:  0.2rem 0.2rem;
+    margin: 10px 20px;
+  }
+
+  .nav{
+  display: none;
+}
+
+.nav.active{
+  display: flex;
+}
 
   .my-s div{
     width: 70%;
