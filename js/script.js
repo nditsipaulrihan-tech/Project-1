@@ -5,3 +5,5 @@ function goToPage(selectElement){
     window.location.href=page;
   }
 }
+
+document.get
