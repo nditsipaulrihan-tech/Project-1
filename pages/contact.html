@@ -36,21 +36,21 @@
     <div class="contact">
       <h2>Let's Talk</h2>
       <p>Whether you are a student who needs research help, a professional seeking clarity, or an organization looking for a speaker I would love to hear from you.</p>
-      <form class="form-c" action="../php/mail.php" method="post" enctype="text/plain">
+      <form class="form-c" action="./send_mail.php" method="POST">
         <label for="name"><b>Full Name</b></label><br>
-        <input type="text" name="name" id="name" placeholder=" Type your name"><br>
+        <input type="text" name="name" id="name" placeholder=" Type your name" required><br>
         <label for="email"><b>Email</b></label><br>
         <input type="email" name="email" id="email" placeholder="example@gmail.com" required><br>
-        <select name="subject" id="subject" title="Subject">
+        <select name="subject" id="subject" title="Subject" required>
           <option>Subject</option>
-          <option value="research">Research Assistant</option>
-          <option value="coach">Clarity Coach</option>
-          <option value="speaking">Speaking Enquiry</option>
-          <option value="order">Order Book</option>
-          <option value="other">Other</option>
+          <option value="Research Assistant">Research Assistant</option>
+          <option value="Clarity Coach">Clarity Coach</option>
+          <option value="Speaking Enquiry">Speaking Enquiry</option>
+          <option value="Order Book">Order Book</option>
+          <option value="Other Services">Other Services</option>
         </select><br>
-        <textarea name="text" id="text" rows="10" placeholder="Type Message Here..."></textarea><br>
-        <button type="submit" name="submit"><i class="fa-solid fa-envelope"></i><b> Send Message</b></button>
+        <textarea name="message" id="message" rows="10" placeholder="Type Message Here..." required></textarea><br>
+        <button type="submit"><i class="fa-solid fa-envelope"></i><b> Send Message</b></button>
       </form>
     </div>
   </main>
