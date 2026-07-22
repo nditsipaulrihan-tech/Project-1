@@ -51,9 +51,8 @@ $body = "Name: $name\nEmail: $email";
 $headers = "From: $from\r\nReply-To: $email\r\n";
 
 if(mail($to,$subject, $body, $headers)){
-    header("Location: ../index.html");
-    echo "<script>alert('Mail Sent, Get Ready for some clarity');</script>";
-    exit;
+    echo "Mail Sent, We will get back to you. <br>
+    Go back to <a href='../index.html'>Home page</a>";
 } else {
     echo "Error: Mail could not be sent. ";
 }}

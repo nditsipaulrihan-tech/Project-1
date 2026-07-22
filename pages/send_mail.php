@@ -1,13 +1,4 @@
 <?php
-// error_reporting(E_ALL); // Report all errors
-// ini_set('display_errors', 1); // Display errors on screen
-
-// // Debugging $_POST data
-// echo "<pre>";
-// print_r($_POST);
-// echo "</pre>";
-// Exit to see the output before mail() attempts to send
-// exit(); // You can uncomment this to stop script execution here
 
 $name = $email = $subject = $message = '';
 
@@ -37,11 +28,13 @@ else{
         echo "Invalid Email<br>";
     }
 
-    // if(){
+    if(empty($_POST['subject'])){
+        echo "Subject Required<br>";
+    }else{
+        $subject = $_POST['subject'];
+    }
 
-    // }else{
-
-    // }
+    
 
     if(empty($_POST['message'])){
         echo "Your Message Objective Isn't Mentioned <br>";
@@ -57,9 +50,9 @@ $headers = "From: $from\r\nReply-To: $email\r\n";
 $body = "Name: $name\nEmail: $email\nSubject: $subject\nMessage:\n$message";
 
 if(mail($to, "New Contact: $from", $body, $headers)){
-    header("Location: ../index.html");
-    echo "<script>alert('Mail Sent, We will get back to you');</script>";
-    exit;
+
+    echo "Mail Sent, We will get back to you. <br>
+    Go back to <a href='../index.html'>Home page</a>";
 
 } else {
     echo "Error: Mail could not be sent.";
