@@ -449,6 +449,10 @@ footer h3{
     padding: 12px 0;
   }
 
+  .h-abt{
+    flex-direction: column-reverse;
+  }
+
   body ul{
     justify-content: center;
     gap: 1rem;
