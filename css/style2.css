@@ -355,6 +355,110 @@ footer h3{
   grid-template-columns: 1fr 1fr;
 }
 
+.gallery {
+  padding: 4px 10px;
+  background-color: oldlace;
+  border-radius: 0.6rem;
+  margin-bottom: 10px;
+  height: auto;
+  align-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px black;
+  width: 100%;
+}
+.gallery .slider {
+  width: 100%;
+  overflow-x: auto;
+  margin: 0 0.3em;
+  display: flex;
+  gap: 1em;
+  scroll-behavior: smooth;
+  anchor-name: --slider;
+  scroll-snap-type: x mandatory;
+  /* scroll-marker-group: after; */
+}
+.gallery .slider::scroll-marker-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+.gallery .slider::-webkit-scrollbar {
+  display: none;
+}
+.gallery .slider::scroll-button(right) {
+  content: "→";
+  position-area: right center;
+  translate: -50%;
+}
+.gallery .slider::scroll-button(left) {
+  content: "←";
+  position-area: left center;
+  translate: 15%;
+}
+.gallery .slider::scroll-button(right), .gallery .slider::scroll-button(left) {
+  color: black;
+  background: rgb(215, 181, 127);
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding-bottom: 0.1em;
+  position: fixed;
+  position-anchor: --slider;
+}
+.gallery .slider::scroll-button(right):disabled, .gallery .slider::scroll-button(left):disabled {
+  opacity: 0.8;
+  cursor: auto;
+}
+.gallery .slider .item {
+  flex: 0 0 20em;
+  aspect-ratio: 16/9;
+  padding: .3em;
+  border-radius: 0.6em;
+  text-align: center;
+  align-content: center;
+  scroll-snap-align: start;
+}
+/* .gallery .slider .item::scroll-marker {
+  content: "";
+  height: 0.4em;
+  width: 0.4em;
+  background: rgb(215, 181, 127);
+  border-radius: 50%;
+
+}
+.gallery .slider .item::scroll-marker:target-current {
+  background: black;
+} */
+
+.item img{
+  border-radius: 0.6rem;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 4px 10px black;
+}
+
+.gallery .slider .item2 {
+  flex: 0 0 20em;
+  aspect-ratio: 5/4;
+  padding: .3em;
+  border-radius: 0.6em;
+  text-align: center;
+  align-content: center;
+  scroll-snap-align: start;
+}
+
+.item2 img{
+  border-radius: 0.6rem;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 4px 10px black;
+}
+
+
 @media (max-width: 1200px){
   main{
     margin: 0 5%;
@@ -420,6 +524,9 @@ footer h3{
   main{
     margin: 0 3%;
     font-size: 1.1rem;
+    letter-spacing: 0.1px;
+    word-spacing: 1px;
+
   }
 
   .the h2, .ch h2{
@@ -467,12 +574,27 @@ footer h3{
   .links ul{
     grid-template-columns: 1fr;
   } */
+
+  .gallery .slider::scroll-button(right) {
+  /* content: "→"; */
+  position-area: right center;
+  translate: 0%;
+}
+.gallery .slider::scroll-button(left) {
+  /* content: "←"; */
+  position-area: left center;
+  translate: 0%;
+}
 }
 
 @media (max-width: 480px){
   main{
     margin: 0 2%;
     font-size: 1rem;
+  }
+
+  .item, .item2{
+    flex: 0 0 100%;
   }
 
   #bars{

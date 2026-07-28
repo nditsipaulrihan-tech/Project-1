@@ -62,3 +62,8 @@ const a = document.querySelectorAll(".click");
         nav.classList.remove("active");
       })
     })})
+
+    let home = document.getElementById("g57s")
+    home.addEventListener('click', ()=>{
+      window.location.href = "../index.html"
+    })

@@ -49,7 +49,7 @@ a:hover{
   transition: all 0.3s ease-in-out;
 }
 
-button:hover{
+button:hover, select:hover{
   background: rgb(186, 162, 130);
   transform: scale(1.1);
   color: white;
@@ -148,19 +148,32 @@ header{
   padding: 2% 0 0 0;
 }
 .hero p{
-  padding: 0 8%;
+  /* padding: 0 5%; */
   margin: 0.5em 1em;
   font-size: 2rem;
 }
 
 .hero button{
   color: white;
-  background-color: rgb(172, 131, 90);
+  background-color: rgb(196, 150, 104);
+  border: none;
+  border-radius: 0.4rem;
+  width: 35%;
+  padding: 8px 0;
+  margin: 0.3em 0.4rem;
+}
+
+.hero select{
+  color: white;
+  background-color: rgb(191, 144, 97);
   border: none;
   border-radius: 0.4rem;
   width: 35%;
   padding: 8px 0;
   margin: 1em 2rem;
+  text-align: center;
+  font-size: 1.3rem;
+  outline: none;
 }
 
 .about-snap{
@@ -449,6 +462,11 @@ footer h3{
     padding: 12px 0;
   }
 
+  main{
+    letter-spacing: 0.1px;
+    word-spacing: 1px;
+  }
+
   .h-abt{
     flex-direction: column-reverse;
   }
@@ -462,6 +480,9 @@ footer h3{
     margin: 0 0 10px 0;
   }
 
+  /* .hero{
+    gap: 0.8rem;
+  } */
   .hero h1{
     font-size: 2.2rem;
   }
@@ -470,7 +491,7 @@ footer h3{
     font-size: 1.1rem;
   }
 
-  .hero button, .e button, .my-books button, .free-r button, .note button{
+  .hero button,.hero select, .e button, .my-books button, .free-r button, .note button{
     width: 90%;
     max-width: 250px;
   }
@@ -618,7 +639,7 @@ footer h3{
     font-size: 1rem;
   }
 
-  .hero button, .e button, .my-books button, .free-r button, .note button{
+  .hero button, .hero select, .e button, .my-books button, .free-r button, .note button{
     width: 80%;
   }
 

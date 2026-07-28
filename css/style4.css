@@ -178,6 +178,7 @@ header{
 
 .fr-f{
   display: flex;
+  flex-direction: column;
   font-size: 1.5rem;
   border-radius: 0.6rem;
   background: oldlace;
@@ -218,7 +219,7 @@ header{
   color: white;
   background: rgb(214, 167, 119);
   margin: 8px 0;
-  width: 80%;
+  width: 50%;
   height: 30px;
   border: none;
   border-radius: 0.6rem;
@@ -347,6 +348,10 @@ footer h3{
 
   main{
     margin: 0 3%;
+  }
+  main{
+    letter-spacing: 0.1px;
+    word-spacing: 1px;
   }
 
   .contact{
