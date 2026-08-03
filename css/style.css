@@ -78,8 +78,16 @@ button{
 
 main{
   padding: 0;
-  margin: 0 10%;
+  margin: 0 auto;
+  width: min(100%, 1200px);
   background: transparent;
+}
+
+.hero div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
 header{
@@ -99,12 +107,33 @@ header{
 
 .logo img{
   height:80px;
+  max-width: 100%;
   margin: 0 2rem 0 0;
   padding: 0;
 }
 
+.nav{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.nav ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav li{
+  margin: 0;
+}
+
 #bars{
   display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
 }
 
 #bars:hover{
@@ -159,7 +188,7 @@ header{
   border: none;
   border-radius: 0.4rem;
   width: 35%;
-  padding: 8px 0;
+  padding: 8px auto;
   margin: 0.3em 0.4rem;
 }
 
@@ -212,7 +241,7 @@ header{
   background-color: rgb(172, 131, 90);
   border: none;
   border-radius: 0.4rem;
-  padding: 8px 0;
+  padding: 8px auto;
   width: 250px;
 }
 
@@ -260,7 +289,7 @@ header{
   border: none;
   border-radius: 0.3em;
   width: 70%;
-  padding: 8px 0;
+  padding: 8px auto;
   margin: 8px 0;
 }
 
@@ -297,7 +326,7 @@ header{
   background: rgb(172, 131, 90);
   color: white;
   width: 230px;
-  padding: 8px 0;
+  padding: 8px auto;
   margin: 1em;
 }
 
@@ -380,7 +409,7 @@ header{
   background: rgb(172, 131, 90);
   color: white;
   width: 230px;
-  padding: 8px 0;
+  padding: 8px auto;
   margin: 0 1em 0.4em 1em;
 }
 
@@ -480,9 +509,10 @@ footer h3{
     margin: 0 0 10px 0;
   }
 
-  /* .hero{
-    gap: 0.8rem;
-  } */
+  .hero{
+    padding: 1.5rem 0;
+  }
+
   .hero h1{
     font-size: 2.2rem;
   }
@@ -491,9 +521,17 @@ footer h3{
     font-size: 1.1rem;
   }
 
-  .hero button,.hero select, .e button, .my-books button, .free-r button, .note button{
+  .hero div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .hero button, .hero select, .e button, .my-books button, .free-r button, .note button{
     width: 90%;
-    max-width: 250px;
+    max-width: 300px;
   }
 
   .about-snap, .h-abt{
@@ -506,13 +544,11 @@ footer h3{
   }
 
   .about-snap .e{
-  margin: 0 ;
-  
+    margin: 0;
   }
 
   .about-snap {
     padding: 8px 10%;
-
   }
 
   .about-snap img{
@@ -528,6 +564,17 @@ footer h3{
     font-size: 1.1rem;
   }
 
+  .my-books{
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .mbl, .mbr{
+    width: 100%;
+    min-width: 0;
+    margin: 1rem 0;
+  }
+
   .wh-abt{
     flex-direction: column;
   }
@@ -536,17 +583,20 @@ footer h3{
     margin: 8px 0;
   }
 
-  /* .footer{
+  .footer{
     flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
   }
 
   .footer div{
-    margin: 10px 0;
+    margin: 0.5rem 0;
+    width: 100%;
   }
 
   .links ul{
     grid-template-columns: 1fr;
-  } */
+  }
 }
 
 @media (max-width: 480px){
@@ -554,22 +604,56 @@ footer h3{
     margin: 0 2%;
   }
 
+  body{
+    background-attachment: scroll;
+  }
+
   #bars{
     display: inline-block;
     position: absolute;
-    top: 0;
-    right: 0;
-    padding:  0.2rem 0.2rem;
-    margin: 10px 20px;
+    top: 0.8rem;
+    right: 1rem;
+    padding: 0.4rem 0.5rem;
+    margin: 0;
+    color: white;
   }
 
   .nav{
-  display: none;
-}
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgb(214, 167, 119);
+    padding: 1rem 0;
+    z-index: 10;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.nav.active{
-  display: flex;
-}
+  .nav.active{
+    display: flex;
+  }
+
+  .nav ul{
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav li{
+    width: 100%;
+  }
+
+  .nav li a,
+  .nav li select{
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
 
   .hero h1{
     font-size: 1.8rem;
@@ -590,7 +674,7 @@ footer h3{
   }
 
   .about-snap p, .about-snap button{
-    margin: 8px 0;
+    margin: 8px auto;
   }
 
   .about-snap img, .h-abt img{

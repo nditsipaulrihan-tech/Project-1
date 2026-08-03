@@ -78,8 +78,27 @@ button{
 
 main{
   padding: 0;
-  margin: 0 10%;
+  margin: 0 auto;
+  width: min(100%, 1200px);
   background: transparent;
+}
+
+.nav{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.nav ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav li{
+  margin: 0;
 }
 
 header{
@@ -135,7 +154,7 @@ header{
   background: rgb(176, 136, 96);
   margin: 8px 0;
   width: 50%;
-  height: 30px;
+  padding: 8px auto;
   border: none;
   border-radius: 0.6rem;
 }
@@ -174,4 +193,112 @@ footer h3{
 .links ul{
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 1200px){
+
+  .footer{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px){
+  header{
+    flex-direction: column;
+    height: auto;
+    padding: 12px 0;
+  }
+
+   main{
+    letter-spacing: 0.1px;
+    word-spacing: 1px;
+  }
+
+  .thanksss{
+    margin: 8% 0;
+  }
+
+  .footer{
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .footer div{
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+
+  .links ul{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px){
+  main{
+    margin: 0 2%;
+  }
+
+  body{
+    background-attachment: scroll;
+  }
+
+  #bars{
+    display: inline-block;
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    padding: 0.4rem 0.5rem;
+    margin: 0;
+    color: white;
+  }
+
+  .nav{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgb(214, 167, 119);
+    padding: 1rem 0;
+    z-index: 10;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav.active{
+    display: flex;
+  }
+
+  .nav ul{
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav li{
+    width: 100%;
+  }
+
+  .nav li a,
+  .nav li select{
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  .thanks h2{
+    padding: 4px;
+  }
+  
+}
+
+@media (max-width: 320px){
+  main{
+    margin: 0;
+  }
 }
