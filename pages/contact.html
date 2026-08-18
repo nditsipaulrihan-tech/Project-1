@@ -21,13 +21,13 @@
         <li><a href="./about.html">About</a></li>
         <li><select onchange="goToPage(this)">
           <option value="book">Books</option>
-          <option value="dairy.html">The Dairy</option>
+          <option value="diary.html">The Diary</option>
           <option value="clarity.html">Clarity</option>
         </select></li>
-        <!-- <li><a href="./blog.html">Blog</a></li> -->
+        <li><a href="./blog.php">Blog</a></li>
         <li><a href="./services.html">Services</a></li>
         <li><a href="./free.html">Free Resources</a></li>
-        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -51,7 +51,7 @@
           <option value="Order Book">Order Book</option>
           <option value="Other Services">Other Services</option>
         </select><br>
-        <textarea name="message" id="message" rows="10" placeholder="Type Message Here..." required></textarea><br>
+        <textarea style="resize: none;" name="message" id="message" rows="10" placeholder="Type Message Here..." required></textarea><br>
         <input type="hidden" name="_next" value="https://ri-test.netlify.app/pages/thanks.html">
         <button type="submit"><i class="fa-solid fa-envelope"></i><b> Send Message</b></button>
       </form>
@@ -67,12 +67,12 @@
         <li><a href="./about.html">About</a></li>
         <li><select onchange="goToPage(this)">
           <option value="book">Books</option>
-          <option value="./dairy.html">The Dairy</option>
+          <option value="./diary.html">The Diary</option>
           <option value="./clarity.html">Clarity</option>
         </select></li>
-        <!-- <li><a href="./blog.html">Blog</a></li> -->
+        <li><a href="./blog.php">Blog</a></li>
         <li><a href="./services.html">Services</a></li>
-        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="#">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -96,5 +96,20 @@
   </footer>
   
   <script src="../js/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+    function sizing() {
+      this.style.height = 'auto';
+      this.style.height = this.scrollHeight + 'px';
+    }
+
+    let input = document.querySelectorAll('textarea[name="message"]');
+
+    input.forEach(text=>{
+      sizing.call(text);
+      text.addEventListener('input', sizing)
+    })
+ })
+  </script>
 </body>
 </html>

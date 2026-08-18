@@ -38,9 +38,15 @@ body ul{
   font-size: 1em;
 }
 
-a:link,a:visited,a:active{
+a:visited,a:link{
   color: rgb(255, 255, 255);
   text-decoration: none;
+}
+
+a:active{
+  color: black;
+  background: white;
+
 }
 
 a:hover{
@@ -49,7 +55,7 @@ a:hover{
   transition: all 0.3s ease-in-out;
 }
 
-button:hover{
+button:hover, select:hover{
   background: rgb(186, 162, 130);
   transform: scale(1.1);
   color: white;
@@ -59,7 +65,7 @@ header, footer{
   padding: 0;
   margin: 0;
 }
-header select{
+header select, #abc {
   background-color: rgb(214, 167, 119);
   border: none;
   color: white;
@@ -72,34 +78,16 @@ footer select{
 }
 
 
+
 button{
   font-size: 1.2rem;
 }
 
 main{
   padding: 0;
-  margin: 0 auto;
-  width: min(100%, 1200px);
+  margin: 0;
   background: transparent;
 }
-
-/* .nav{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.nav ul{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.nav li{
-  margin: 0;
-} */
 
 header{
   background:  rgb(214, 167, 119);
@@ -131,33 +119,8 @@ header{
   color: white;
 }
 
-.thanksss{
-  justify-items: center;
-  margin: 8% 0;
-}
 
 
-.thanks{
-  margin: 8px;
-  background: oldlace;
-  box-shadow: 0 4px 10px black;
-  font-size: 1.2rem;
-  width: 30%;
-  border-radius: 0.6rem;
-  position: relative;
-  text-align: center;
-  width: 80%;
-  padding: 5% 0; 
-}
-.thanks button{
-  color: white;
-  background: rgb(176, 136, 96);
-  margin: 8px 0;
-  width: 50%;
-  padding: 8px;
-  border: none;
-  border-radius: 0.6rem;
-}
 
 footer{
   background:  rgb(214, 167, 119);
@@ -195,41 +158,13 @@ footer h3{
   grid-template-columns: 1fr 1fr;
 }
 
+
+
 @media (max-width: 1200px){
 
   .footer{
     flex-wrap: wrap;
     justify-content: center;
-  }
-}
-
-@media (max-width: 910px){
-
-  #bars{
-    display: inline-block;
-    position: absolute;
-    top: 0.8rem;
-    right: 1rem;
-    padding: 0.4rem 0.5rem;
-    margin: 0;
-    color: white;
-  }
-
-  .nav{
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgb(214, 167, 119);
-    padding: 1rem 0;
-    z-index: 10;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav.active{
-    display: flex;
   }
 }
 
@@ -240,30 +175,15 @@ footer h3{
     padding: 12px 0;
   }
 
-   main{
+  main{
     letter-spacing: 0.1px;
     word-spacing: 1px;
   }
 
-  .thanksss{
-    margin: 8% 0;
+  .logo img{
+    margin: 0 0 10px 0;
   }
 
-  /* .footer{
-     flex-direction: column; 
-    justify-content: center;
-    gap: 1rem;
-  } */
-
-  /* .footer div{
-    margin: 0.5rem 0;
-    gap: 2;
-    width: 100%;
-  } */
-
-  /* .links ul{
-    grid-template-columns: fr;
-  } */
 }
 
 @media (max-width: 480px){
@@ -271,65 +191,32 @@ footer h3{
     margin: 0 2%;
   }
 
-  body{
-    background-attachment: scroll;
-  }
-
   #bars{
     display: inline-block;
     position: absolute;
-    top: 0.8rem;
-    right: 1rem;
-    padding: 0.4rem 0.5rem;
-    margin: 0;
-    color: white;
+    top: 0;
+    right: 0;
+    padding:  0.2rem 0.2rem;
+    margin: 10px 20px;
   }
 
   .nav{
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgb(214, 167, 119);
-    padding: 1rem 0;
-    z-index: 10;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: none;
+}
 
-  .nav.active{
-    display: flex;
-  }
+.nav.active{
+  display: flex;
+}
 
-  .nav ul{
-    flex-direction: column;
-    gap: 0.75rem;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
+.nav ul{
+  flex-direction: column;
+}
 
-  .nav li{
-    width: 100%;
-  }
-
-  .nav li a,
-  .nav li select{
-    display: block;
-    width: 100%;
-    padding: 0.75rem 1rem;
-    text-align: center;
-  }
-
-  .thanks h2{
-    padding: 4px;
-  }
-  
 }
 
 @media (max-width: 320px){
   main{
     margin: 0;
   }
+
 }

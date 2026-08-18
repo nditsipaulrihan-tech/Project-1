@@ -50,7 +50,7 @@ a:hover{
 }
 
 button:hover{
-  background: rgb(186, 162, 130);
+  background: rgb(172, 131, 90);
   transform: scale(1.1);
   color: white;
 }
@@ -73,14 +73,20 @@ footer select{
 
 
 button{
+  background: rgb(172, 131, 90);
+  width: 20%;
+  padding: 4px 0;
   font-size: 1.2rem;
+  color: white;
+  border: none;
+  border-radius: 1rem;
 }
 
 main{
   padding: 0;
-  margin: 0 auto;
-  width: min(100%, 1200px);
+  margin: 0 8%;
   background: transparent;
+  /* min-height: 100vh; */
 }
 
 /* .nav{
@@ -131,32 +137,59 @@ header{
   color: white;
 }
 
-.thanksss{
-  justify-items: center;
-  margin: 8% 0;
-}
-
-
-.thanks{
-  margin: 8px;
-  background: oldlace;
-  box-shadow: 0 4px 10px black;
-  font-size: 1.2rem;
-  width: 30%;
-  border-radius: 0.6rem;
-  position: relative;
-  text-align: center;
-  width: 80%;
-  padding: 5% 0; 
-}
-.thanks button{
-  color: white;
-  background: rgb(176, 136, 96);
+/* Blog Page */
+.main{
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0,1fr));
   margin: 8px 0;
-  width: 50%;
+}
+.post{
+  background: white;
   padding: 8px;
-  border: none;
-  border-radius: 0.6rem;
+  height: auto;
+  /* aspect-ratio: 3/1; */
+  border-radius: .6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.etc{
+  display: flex;
+  gap: 5px;
+  min-height: auto;
+  height: 100%;
+}
+/* .post .img{
+  aspect-ratio: 2/3;
+} */
+.post .bloga{
+  font-size: 1.2em;
+  max-height: 100%;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+
+.post img{
+  aspect-ratio: 2/3;
+  height: 100%;
+  border-radius: .6em;
+}
+.post .desc{
+  padding: 0 2px;
+  /* margin-bottom: 1px; */
+  color: gray;
+  max-height: 100vh;
+}
+.post a{
+  color: blue;
+  /* margin-top: 0;
+  margin-right: 0;
+  margin-left: auto;
+  margin-bottom: auto; */
+  font-size: 1rem;
 }
 
 footer{
@@ -196,14 +229,35 @@ footer h3{
 }
 
 @media (max-width: 1200px){
-
+  main{
+    margin: 0 5%;
+  }
+  
   .footer{
     flex-wrap: wrap;
     justify-content: center;
   }
 }
 
+@media (max-width: 1050px) {
+  .post .bloga{
+  font-size: 1.1em;
+}
+.main{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+}
+
 @media (max-width: 910px){
+  /* .post{
+    height: 200px;
+  } */
+  .post .bloga{
+  font-size: 1.2em;
+}
+
+
 
   #bars{
     display: inline-block;
@@ -243,36 +297,68 @@ footer h3{
    main{
     letter-spacing: 0.1px;
     word-spacing: 1px;
+    margin: 0 10%;
   }
 
-  .thanksss{
-    margin: 8% 0;
+
+  .main{
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  /* .footer{
-     flex-direction: column; 
-    justify-content: center;
-    gap: 1rem;
-  } */
-
-  /* .footer div{
-    margin: 0.5rem 0;
-    gap: 2;
-    width: 100%;
-  } */
-
-  /* .links ul{
-    grid-template-columns: fr;
-  } */
+  .post .bloga{
+  font-size: 1.4em;
 }
+
+}
+
+@media (max-width: 600px){
+  .main{
+    grid-template-columns: 1fr;
+  }
+
+  main{
+    margin: 0 5%;
+  }
+}
+
 
 @media (max-width: 480px){
   main{
-    margin: 0 2%;
+    margin: 0 8%;
   }
+
+  .etc{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  .post a{
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: auto;
+    margin-bottom: auto;
+    font-size: 1rem;
+  }
+
+  .post h3{
+    text-align: center;
+  }
+
+
+  .post img{
+    height: 160px;
+  }
+
+  .post .bloga{
+  font-size: 1.4em;
+}
+
 
   body{
     background-attachment: scroll;
+    background-attachment: fixed;
   }
 
   #bars{
@@ -322,14 +408,19 @@ footer h3{
     text-align: center;
   }
 
-  .thanks h2{
-    padding: 4px;
-  }
-  
+  .post .desc{
+  padding: 2px 8px;
+  margin-bottom: 10px;
 }
 
-@media (max-width: 320px){
+}
+
+@media (max-width: 330px){
   main{
-    margin: 0;
+    margin: 0 4%;
+  }
+
+  .main{
+    padding: 0 8px;
   }
 }

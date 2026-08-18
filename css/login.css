@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-image: url(../img/bac.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+}
+
+form {
+  border-radius: 0.4rem;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px 30px;
+  font-size: 1.2rem;
+  background: oldlace;
+  box-shadow: 0 1px 5px black;
+}
+form .formg {
+  margin-bottom: 15px;
+}
+form h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+form .input {
+  border-radius: 0.6rem;
+  width: 96%;
+  padding: 8px;
+  border: none;
+}
+form button {
+  color: white;
+  background: rgb(186, 162, 130);
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 1.4rem;
+  border-radius: 0.6rem;
+  text-align: center;
+  align-self: center;
+}
+form button:hover {
+  transform: scale(1.1);
+}
+
+span {
+  color: red;
+  padding: 10px auto;
+  margin-top: 4px;
+}
+
+center {
+  width: 100%;
+  padding: 8px 0;
+}
+
+a {
+  color: rgb(214, 167, 119);
+}
+a:visited, a:active {
+  color: rgb(214, 167, 119);
+}
+
+.cardd {
+  width: 100%;
+  max-width: 400px;
+}
+
+.card {
+  background: white;
+  padding: 10px;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.card .img {
+  padding: 10px;
+}
+.card .img .info p {
+  padding: 4px;
+  margin-left: 8px;
+  font-size: 1.3rem;
+}

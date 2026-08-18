@@ -67,3 +67,14 @@ const a = document.querySelectorAll(".click");
     home.addEventListener('click', ()=>{
       window.location.href = "../index.html"
     })
+
+
+
+  // let com = document.getElementById("come");
+  // let form = document.querySelector(".form");
+  //   if(menu){
+  //     com.addEventListener("click", ()=>{
+  //       form.classList.toggle("active");
+        
+  //     })
+  //   }

@@ -1,6 +1,6 @@
 <?php
 
-$name = $email = $subject = $message = '';
+$name = $email = $subject = $message = $error = '';
 
 if(!($_SERVER['REQUEST_METHOD']=='POST')){
 
@@ -51,10 +51,9 @@ $body = "Name: $name\nEmail: $email\nSubject: $subject\nMessage:\n$message";
 
 if(mail($to, "New Contact: $from", $body, $headers)){
 
-    echo "Mail Sent, We will get back to you. <br>
-    Go back to <a href='../index.html'>Home page</a>";
+    echo "<scri>alert('Mail sent');</script>";
 
 } else {
-    echo "Error: Mail could not be sent.";
+    echo "<scri>alert('Mail not sent');</script>";
 }}
 ?>

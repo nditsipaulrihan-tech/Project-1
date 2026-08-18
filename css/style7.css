@@ -49,9 +49,9 @@ a:hover{
   transition: all 0.3s ease-in-out;
 }
 
-button:hover{
-  background: rgb(186, 162, 130);
-  transform: scale(1.1);
+button:hover, #myForm button:hover{
+  background: rgb(172, 131, 90);
+  transform: scale(1.07);
   color: white;
 }
 
@@ -73,33 +73,23 @@ footer select{
 
 
 button{
+  background: rgb(172, 131, 90);
+  width: 20%;
+  padding: 4px 0;
   font-size: 1.2rem;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  outline: none;
 }
 
 main{
   padding: 0;
-  margin: 0 auto;
-  width: min(100%, 1200px);
+  margin: 0 10%;
   background: transparent;
 }
 
-/* .nav{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
 
-.nav ul{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.nav li{
-  margin: 0;
-} */
 
 header{
   background:  rgb(214, 167, 119);
@@ -131,33 +121,83 @@ header{
   color: white;
 }
 
-.thanksss{
-  justify-items: center;
-  margin: 8% 0;
+
+/* Post page */
+.blog_post{
+  background: white;
+  border-radius: .6rem;
+  height: auto;
+  padding: 15px;
+  font-size: 1.4rem;
+  margin: 8px 8%;
 }
 
+.blog_post > a{
+  color: blue;
+}
 
-.thanks{
-  margin: 8px;
-  background: oldlace;
-  box-shadow: 0 4px 10px black;
-  font-size: 1.2rem;
-  width: 30%;
-  border-radius: 0.6rem;
-  position: relative;
+.blog_post .bpost{
+  display: flex;
+  gap: 20px;
+  margin: 8px 10%;
+}
+
+.blog_post h2{
   text-align: center;
-  width: 80%;
-  padding: 5% 0; 
+  font-size: 2.5rem;
+  margin: 10px 0;
 }
-.thanks button{
-  color: white;
-  background: rgb(176, 136, 96);
-  margin: 8px 0;
-  width: 50%;
+
+.blog_post p{
+  margin: 4px 0;
+  padding: 4px;
+}
+
+.blog_post .desc{
+  color: gray;
+  font-size: 1.2em;
+}
+
+.blog_post img{
+  height: 250px;
+  border-radius: .6rem;
+  aspect-ratio: 2/3;
+}
+
+.blog_post blockquote{
   padding: 8px;
-  border: none;
-  border-radius: 0.6rem;
+  border-radius: .6rem;
+  border-left: 6px solid orange;
+  margin: 8px 2%;
+  background: rgba(247, 214, 158, 0.752);
 }
+
+.blog_com{
+  margin: 8px 0;
+  align-items: center;
+}
+
+.blog_com .comments{
+  background: oldlace;
+  border-radius: .6rem;
+  margin: 8px 12%;
+  padding: 8px;
+}
+
+.blog_com .com{
+  background: white;
+  border-radius: .6rem;
+  padding: 8px;
+}
+
+.blog_com button{
+  margin: 0 40%;
+}
+
+.blog_com p{
+  margin: 4px 0;
+}
+
 
 footer{
   background:  rgb(214, 167, 119);
@@ -203,7 +243,18 @@ footer h3{
   }
 }
 
+@media (max-width: 1050px) {
+
+  .blog_post .bpost{
+    margin: 8px 6%;
+  }
+}
+
 @media (max-width: 910px){
+
+  main{
+    margin: 0 5%;
+  }
 
   #bars{
     display: inline-block;
@@ -243,36 +294,50 @@ footer h3{
    main{
     letter-spacing: 0.1px;
     word-spacing: 1px;
+    margin: 0 5%;
   }
 
-  .thanksss{
-    margin: 8% 0;
+  .blog_post{
+    margin: 8px 3%;
   }
 
-  /* .footer{
-     flex-direction: column; 
-    justify-content: center;
-    gap: 1rem;
-  } */
+  .blog_post .bpost{
+    flex-direction: column;
+    align-items: center;
+    margin: 8px 4%;
+  }
 
-  /* .footer div{
-    margin: 0.5rem 0;
-    gap: 2;
-    width: 100%;
-  } */
-
-  /* .links ul{
-    grid-template-columns: fr;
-  } */
+  .blog_com button{
+  margin: 0 35%;
+  width: 30%;
 }
+
+}
+
+@media (max-width: 600px){
+
+  main{
+    margin: 0 5%;
+  }
+  .blog_post{
+    margin: 8px 2%;
+  }
+
+   .blog_com .comments{
+    margin: 8px 4%;
+  }
+}
+
 
 @media (max-width: 480px){
   main{
     margin: 0 2%;
   }
 
+
   body{
     background-attachment: scroll;
+    background-attachment: fixed;
   }
 
   #bars{
@@ -322,14 +387,27 @@ footer h3{
     text-align: center;
   }
 
-  .thanks h2{
-    padding: 4px;
+  .blog_com .comments{
+    margin: 8px 3%;
   }
-  
+
+  .blog_com button{
+    margin: 0 20%;
+    width: 60%;
+  }
+
+
 }
 
-@media (max-width: 320px){
+@media (max-width: 330px){
   main{
-    margin: 0;
+    margin: 0 1%;
   }
+
+  .blog_post{
+    margin: 8px 0;
+    font-size: 1.2rem;
+  }
+
+
 }

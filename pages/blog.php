@@ -1,15 +1,28 @@
+<?php ?><?php 
+
+session_start();
+include '../admin/connection.php';
+
+$sql = "SELECT * FROM post;";
+
+$result = mysqli_query($conn, $sql);
+
+$post ='';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style5.css">
+  <link rel="stylesheet" href="../css/style6.css">
   <link rel="shortcut icon" href="../img/icon.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <title>Blog</title>
 </head>
 <body>
- 
+
   <header>
     <div class="logo">
       <img src="../img/logom.png" alt="">
@@ -21,10 +34,10 @@
         <li><a href="./about.html">About</a></li>
         <li><select onchange="goToPage(this)">
           <option value="book">Books</option>
-          <option value="dairy.html">The Dairy</option>
+          <option value="diary.html">The Diary</option>
           <option value="clarity.html">Clarity</option>
         </select></li>
-        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="#">Blog</a></li>
         <li><a href="./services.html">Services</a></li>
         <li><a href="./free.html">Free Resources</a></li>
         <li><a href="./contact.html">Contact</a></li>
@@ -32,8 +45,49 @@
     </nav>
   </header>
 
-  <main></main>
-  
+  <main>
+   <div class="main">    
+        <?php
+        if(mysqli_num_rows($result)>0){
+
+        $blog = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+        foreach($blog as $a):
+          $post = "
+            <div class='post'>
+              <div>
+                <h3>{$a['title']}</h3>
+              </div>
+              <div class='etc'>
+                <div class='img'><img src='{$a['img_url']}' alt=''></div>
+              <div class='bloga'>
+                <p class='desc'>{$a['post_desc']}
+                <a href='./blogpost.php?post_id={$a['id']}'>Read Article&gt;</a></p>
+              </div>
+              </div>
+            </div>
+          ";echo $post;
+          $_SESSION['title'] = $a['title'];
+          $_SESSION['post_desc'] = $a['post_desc'];
+          $_SESSION['uploaded'] = $a['uploaded'];
+          $_SESSION['paragraph_i'] = $a['paragraph_i'];
+          $_SESSION['paragraph_ii'] = $a['paragraph_ii'];
+          $_SESSION['paragraph_iii'] = $a['paragraph_iii'];
+          $_SESSION['post_note'] = $a['post_note'];
+          $_SESSION['img_url'] = $a['img_url'];
+          
+        endforeach;
+        } else{
+          echo "<script>alert('No Article Published');</script>";
+        }
+
+        mysqli_free_result($result);
+        mysqli_close($conn);?>
+   </div>
+  </main>
+ 
+
+
   <footer>
     <div class="footer">
       <div class="links">
@@ -43,10 +97,10 @@
         <li><a href="./about.html">About</a></li>
         <li><select onchange="goToPage(this)">
           <option value="book">Books</option>
-          <option value="./dairy.html">The Dairy</option>
+          <option value="./diary.html">The Diary</option>
           <option value="./clarity.html">Clarity</option>
         </select></li>
-        <!-- <li><a href="./blog.html">Blog</a></li> -->
+        <li><a href="#">Blog</a></li>
         <li><a href="./services.html">Services</a></li>
         <li><a href="./contact.html">Contact</a></li>
         </ul>
