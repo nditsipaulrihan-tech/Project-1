@@ -1,0 +1,252 @@
+/* Inherited from previous global CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  background-image: url(../img/bac.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+#bars {
+  display: none;
+  cursor: pointer;
+}
+
+section {
+  display: flex;
+  gap: 20px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ==========================================
+   HEADER / SIDEBAR NAVIGATION (Consistent with other dashboard pages)
+   ========================================== */
+header {
+  background: rgb(214, 167, 119);
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  min-width: 200px;
+  min-height: 100vh;
+  padding: 1rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+header img {
+  height: 90px;
+  object-fit: contain;
+}
+
+header span {
+  margin: 12px 0 6px 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+header nav {
+  display: flex;
+  flex-direction: column;
+}
+
+header nav a {
+  margin: 6px 0;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease;
+}
+
+header nav a:hover, header nav a.active {
+  text-decoration: underline;
+  transform: translateX(4px);
+}
+
+header nav a:active, header nav a:visited {
+  color: white;
+}
+
+/* ==========================================
+   MAIN CONTENT AREA (Responsive Profile Form)
+   ========================================== */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center the form horizontally */
+  align-items: flex-start; /* Align form to the top vertically */
+  padding: 30px 20px;
+  min-width: 0;
+}
+
+main form {
+  background: white;
+  border-radius: 0.8rem; /* Slightly larger radius for a modern feel */
+  padding: 25px;
+  width: 100%;
+  max-width: 600px; /* Optimal width for a form */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  height: auto;
+}
+
+main form h2 {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.8rem;
+}
+
+main form h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #34495e;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #eceff1;
+  padding-bottom: 8px;
+}
+
+main form .form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+main form .form-group label {
+  font-size: 1rem;
+  color: #34495e;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+main form .form-group .input {
+  border: 1px solid #dcdde1;
+  width: 100%;
+  background: rgb(245, 246, 250);
+  border-radius: 0.4rem;
+  color: black;
+  outline: none;
+  padding: 12px;
+  margin-top: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+main form .form-group .input:focus {
+  border-color: rgb(214, 167, 119);
+  background-color: #ffffff;
+}
+
+/* Submit button */
+main form button[type="submit"] {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 0.6rem;
+  border: none;
+  outline: none;
+  background: rgb(214, 167, 119);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 25px;
+}
+
+main form button[type="submit"]:hover {
+  background-color: rgb(185, 138, 90);
+  transform: translateY(-1px);
+}
+
+main form button[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+/* ==========================================
+   FOOTER (Consistent with other dashboard pages)
+   ========================================== */
+footer {
+  background: rgb(214, 167, 119);
+  padding: 12px 0;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* ==========================================
+   BREAKPOINTS (RESPONSIVENESS)
+   ========================================== */
+
+/* Medium Devices / Tablets (<= 950px) */
+@media (max-width: 950px) {
+  header {
+    width: 220px;
+  }
+}
+
+/* Mobile Devices & Small Tablets (<= 768px) */
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Fixed Hamburger Menu Placement */
+  #bars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(214, 167, 119);
+    padding: 5px;
+    color: white;
+    font-size: 1.4rem;
+    height: 40px;
+    width: 40px;
+    border-radius: 0.6rem;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Slide Out Drawer Navigation */
+  .nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    z-index: 1000;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  main {
+    padding: 70px 15px 25px 15px; /* Offset for fixed header menu */
+  }
+
+  main form {
+    max-width: 100%; /* Form takes full width on small screens */
+    padding: 20px;
+  }
+}

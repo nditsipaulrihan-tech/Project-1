@@ -1,0 +1,366 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  background-image: url(../img/bac.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+  display: flex;
+  flex-direction: column;
+}
+
+#bars {
+  display: none;
+  cursor: pointer;
+}
+
+section {
+  display: flex;
+  gap: 20px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ==========================================
+   HEADER / SIDEBAR NAVIGATION
+   ========================================== */
+header {
+  background: rgb(214, 167, 119);
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  min-width: 200px;
+  min-height: 100vh;
+  padding: 1rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+header img {
+  height: 90px;
+  object-fit: contain;
+}
+
+header span {
+  margin: 12px 0 6px 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+header nav {
+  display: flex;
+  flex-direction: column;
+}
+
+header nav a {
+  margin: 6px 0;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+  transform: translateX(4px);
+}
+
+header nav a:active, header nav a:visited {
+  color: white;
+}
+
+/* ==========================================
+   RESPONSIVE MAIN CONTAINER & COMMENT CARDS
+   ========================================== */
+main {
+  flex: 1;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 900px; /* Limits max reading width for comments */
+  min-width: 0; /* Prevents flex children overflow */
+}
+
+/* Individual Comment Card */
+.com {
+  background: white;
+  border-radius: 0.8rem;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.com:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Post Badge */
+.com small {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #1e7e34;
+  background: rgba(131, 217, 131, 0.4);
+  border-radius: 1rem;
+  align-self: flex-start;
+}
+
+/* Comment Info (Username & Body) */
+.com .info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.com .info h4 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.com .info p {
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.5;
+  word-break: break-word; /* Prevents long unbroken strings from breaking layout */
+}
+
+/* ==========================================
+   SORT CONTROL BAR
+   ========================================== */
+.sort-bar {
+  background: white;
+  padding: 12px 18px;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
+.sort-bar form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-bar label {
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.sort-bar select {
+  padding: 8px 12px;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #1e293b;
+  font-size: 0.95rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.sort-bar select:focus {
+  border-color: rgb(214, 167, 119);
+  background: #ffffff;
+}
+
+
+
+/* ==========================================
+   DELETE / CANCEL ACTION BUTTONS
+   ========================================== */
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* Initial Delete Button */
+.btn {
+  display: none;
+  align-self: flex-start;
+  padding: 6px 16px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn.active {
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #bd2130;
+}
+
+/* Confirmation Box (.del) */
+.del {
+  display: none;
+}
+
+.del.active {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px 14px;
+  border-radius: 0.6rem;
+  max-width: 280px;
+}
+
+.del form {
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Cancel Button (.nope) */
+.nope {
+  padding: 6px 14px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  width: 100%;
+}
+
+.nope:hover {
+  background: #5a6268;
+}
+
+/* Yes Confirm Button (.yep) */
+.yep {
+  padding: 6px 14px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  width: 100%;
+}
+
+.yep:hover {
+  background: #bd2130;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+  background: rgb(214, 167, 119);
+  padding: 12px 0;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* ==========================================
+   BREAKPOINTS (RESPONSIVENESS)
+   ========================================== */
+
+/* Medium Devices / Tablets (<= 950px) */
+@media (max-width: 950px) {
+  header {
+    width: 220px;
+  }
+}
+
+/* Mobile Devices & Small Tablets (<= 768px) */
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sort-bar {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Fixed Hamburger Icon */
+  #bars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(214, 167, 119);
+    padding: 5px;
+    color: white;
+    font-size: 1.4rem;
+    height: 40px;
+    width: 40px;
+    border-radius: 0.6rem;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Slide-Out Drawer Navigation */
+  .nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    z-index: 1000;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  main {
+    padding: 70px 15px 25px 15px; /* Top padding offsets the fixed #bars button */
+    max-width: 100%;
+  }
+
+  .com {
+    padding: 14px;
+  }
+
+  .del.active {
+    max-width: 100%; /* Full width confirmation box on small screens */
+  }
+}

@@ -1,0 +1,323 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url(../img/bac.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+}
+
+body ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0;
+  font-size: 1em;
+}
+
+a:link, a:visited, a:active {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+
+button {
+  background: rgb(172, 131, 90);
+  width: 20%;
+  padding: 4px 0;
+  font-size: 1.2rem;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+}
+
+button:hover {
+  background: rgb(172, 131, 90);
+  transform: scale(1.05);
+  color: white;
+}
+
+header, footer {
+  padding: 0;
+  margin: 0;
+}
+
+header select, footer select {
+  background-color: rgb(214, 167, 119);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+header {
+  background: rgb(214, 167, 119);
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  height: 100px;
+  position: relative;
+  text-align: center;
+}
+
+.logo img {
+  height: 80px;
+  margin-right: 2rem;
+}
+
+#bars {
+  display: none;
+  cursor: pointer;
+}
+
+#bars:hover {
+  color: white;
+}
+
+/* ==========================================
+   RESPONSIVE <MAIN> & GRID CARD LAYOUT
+   ========================================== */
+main {
+  flex: 1;
+  padding: 30px 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Centers main area neatly */
+}
+
+/* Fluid responsive CSS Grid for Posts Container */
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  align-content: start;
+}
+
+/* Post Card Styling */
+.post {
+  background: white;
+  border-radius: 0.8rem;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 0;
+}
+
+.post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+.post h3 {
+  font-size: 1.25rem;
+  color: #2c3e50;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+/* Grid layout for image and text content inside the post card */
+.etc {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  align-items: start;
+  flex: 1;
+}
+
+.post .img {
+  width: 120px;
+  height: 150px;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+
+.post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  transition: transform 0.3s ease;
+}
+
+.post:hover img {
+  transform: scale(1.05);
+}
+
+.post .bloga {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.post .desc {
+  color: #555;
+  line-height: 1.45;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.post a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0056b3;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.post a:hover {
+  color: #003d80;
+  text-decoration: underline;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+  background: rgb(214, 167, 119);
+  color: rgb(255, 255, 255);
+  padding: 20px 0 10px 0;
+  margin-top: auto;
+}
+
+footer h3 {
+  margin-bottom: 0.8rem;
+  color: #111;
+  font-size: 1.1rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 5%;
+}
+
+.footer ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.links ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1rem;
+}
+
+/* ==========================================
+   MEDIA QUERIES (BREAKPOINTS)
+   ========================================== */
+
+/* Laptop / Medium Display */
+@media (max-width: 1050px) {
+  main {
+    padding: 25px 15px;
+  }
+}
+
+/* Tablet Layout (<= 910px) */
+@media (max-width: 910px) {
+  #bars {
+    display: inline-block;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgb(214, 167, 119);
+    padding: 1.5rem 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+}
+
+/* Mobile Screen Layout (<= 600px) */
+@media (max-width: 600px) {
+  .main {
+    grid-template-columns: 1fr; /* Single column on phones */
+  }
+
+  .etc {
+    grid-template-columns: 100px 1fr; /* Slightly smaller image on narrow phones */
+  }
+
+  .post .img {
+    width: 100px;
+    height: 130px;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .links ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Extra Small Phones (<= 400px) */
+@media (max-width: 400px) {
+  .etc {
+    grid-template-columns: 1fr; /* Stack image on top of description on very small screens */
+    justify-items: center;
+  }
+
+  .post .img {
+    width: 100%;
+    height: 180px;
+  }
+}

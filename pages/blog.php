@@ -1,22 +1,17 @@
-<?php ?><?php 
-
+<?php 
 session_start();
 include '../admin/connection.php';
 
-$sql = "SELECT * FROM post;";
-
+$sql = "SELECT * FROM post ORDER BY id DESC;";
 $result = mysqli_query($conn, $sql);
-
-$post ='';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style6.css">
+  <link rel="stylesheet" href="../css/style6 copy.css">
   <link rel="shortcut icon" href="../img/icon.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <title>Blog</title>
@@ -25,18 +20,20 @@ $post ='';
 
   <header>
     <div class="logo">
-      <img src="../img/logom.png" alt="">
+      <img src="../img/logom.png" alt="Logo">
     </div>
     <i class="fa-solid fa-bars" id="bars"></i>
     <nav class="nav">
       <ul>
         <li><a href="../index.html">Home</a></li>
         <li><a href="./about.html">About</a></li>
-        <li><select onchange="goToPage(this)">
-          <option value="book">Books</option>
-          <option value="diary.html">The Diary</option>
-          <option value="clarity.html">Clarity</option>
-        </select></li>
+        <li>
+          <select onchange="goToPage(this)">
+            <option value="book">Books</option>
+            <option value="diary.html">The Diary</option>
+            <option value="clarity.html">Clarity</option>
+          </select>
+        </li>
         <li><a href="#">Blog</a></li>
         <li><a href="./services.html">Services</a></li>
         <li><a href="./free.html">Free Resources</a></li>
@@ -46,65 +43,56 @@ $post ='';
   </header>
 
   <main>
-   <div class="main">    
-        <?php
-        if(mysqli_num_rows($result)>0){
+    <div class="main">    
+      <?php
+      if ($result && mysqli_num_rows($result) > 0) {
+          while ($a = mysqli_fetch_assoc($result)) {
+              $img_path = (strpos($a['img_url'], 'uploads/') === 0) ? $a['img_url'] : '../admin/uploads/' . $a['img_url'];
+              
+              echo "
+              <div class='post'>
+                <h3>" . htmlspecialchars($a['title']) . "</h3>
+                <div class='etc'>
+                  <div class='img'>
+                    <img src='" . htmlspecialchars($img_path) . "' alt='Post Image' onerror=\"this.src='../img/logom.png'\">
+                  </div>
+                  <div class='bloga'>
+                    <p class='desc'>" . htmlspecialchars($a['post_desc']) . "</p>
+                    <a href='./blogpost.php?post_id={$a['id']}'>Read Article <i class='fa-solid fa-arrow-right'></i></a>
+                  </div>
+                </div>
+              </div>";
+          }
+      } else {
+          echo "<p style='background: white; padding: 20px; border-radius: 0.8rem; text-align: center; grid-column: 1 / -1;'>No articles published yet.</p>";
+      }
 
-        $blog = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-        foreach($blog as $a):
-          $post = "
-            <div class='post'>
-              <div>
-                <h3>{$a['title']}</h3>
-              </div>
-              <div class='etc'>
-                <div class='img'><img src='{$a['img_url']}' alt=''></div>
-              <div class='bloga'>
-                <p class='desc'>{$a['post_desc']}
-                <a href='./blogpost.php?post_id={$a['id']}'>Read Article&gt;</a></p>
-              </div>
-              </div>
-            </div>
-          ";echo $post;
-          $_SESSION['title'] = $a['title'];
-          $_SESSION['post_desc'] = $a['post_desc'];
-          $_SESSION['uploaded'] = $a['uploaded'];
-          $_SESSION['paragraph_i'] = $a['paragraph_i'];
-          $_SESSION['paragraph_ii'] = $a['paragraph_ii'];
-          $_SESSION['paragraph_iii'] = $a['paragraph_iii'];
-          $_SESSION['post_note'] = $a['post_note'];
-          $_SESSION['img_url'] = $a['img_url'];
-          
-        endforeach;
-        } else{
-          echo "<script>alert('No Article Published');</script>";
-        }
-
-        mysqli_free_result($result);
-        mysqli_close($conn);?>
-   </div>
+      if ($result) mysqli_free_result($result);
+      mysqli_close($conn);
+      ?>
+    </div>
   </main>
- 
-
 
   <footer>
     <div class="footer">
       <div class="links">
         <h3>Quick Links</h3>
         <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><select onchange="goToPage(this)">
-          <option value="book">Books</option>
-          <option value="./diary.html">The Diary</option>
-          <option value="./clarity.html">Clarity</option>
-        </select></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="./services.html">Services</a></li>
-        <li><a href="./contact.html">Contact</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li>
+            <select onchange="goToPage(this)">
+              <option value="book">Books</option>
+              <option value="./diary.html">The Diary</option>
+              <option value="./clarity.html">Clarity</option>
+            </select>
+          </li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./contact.html">Contact</a></li>
         </ul>
       </div>
+
       <div>
         <h3>Follow Me</h3>
         <ul>
@@ -113,6 +101,7 @@ $post ='';
           <li><i class="fa-brands fa-linkedin"></i><a href="https://cm.linkedin.com/in/kum-doris-mbeuh-66868a223" target="_blank" rel="noopener noreferrer"> LinkedIn</a></li>
         </ul>
       </div>
+
       <div>
         <h3>Contact Me</h3>
         <ul>
@@ -121,7 +110,7 @@ $post ='';
         </ul>
       </div>
     </div>
-    <hr>
+    <hr style="margin: 15px 0 10px 0; border: 0; border-top: 1px solid rgba(255,255,255,0.3);">
     <small>&copy; 2026 - All rights reserved.</small>
   </footer>
   

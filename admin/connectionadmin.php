@@ -1,17 +1,17 @@
 <?php
 session_start();
 
-include 'admin/connection.php';
+include("connection.php");
 
 $error = $info = $pass = '';
 
 if (isset($_POST['send'])) {
   $info = isset($_POST['info']) ? trim($_POST['info']) : '';
-  $pass = isset($_POST['zpassword']) ? $_POST['zpassword'] : '';
+  $pass = isset($_POST['passkey']) ? $_POST['passkey'] : '';
 
   if (!empty($info)) {
 
-    $sql = "SELECT * FROM admin WHERE email='$info';";
+    $sql = "SELECT * FROM user_info WHERE email='$info';";
     $result = mysqli_query($conn, $sql);
 
     if($result){
@@ -22,15 +22,16 @@ if (isset($_POST['send'])) {
 
       if ($row) {
 
-        if (password_verify($pass, $row['password'])) {
+        if (password_verify($pass, $row['passkey'])) {
           $_SESSION['name'] = $row['name'];
           $_SESSION['email'] = $row['email'];
+
 
           if (!empty($error)) {
             $error = '';
           } else {
             mysqli_close($conn);
-            header("Location: admin/blog_post.php");
+            header("Location: index.php");
             exit();
           }
         } else {
@@ -64,7 +65,7 @@ if (isset($_POST['send'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="./css/login.css">
+  <link rel="stylesheet" href="../css/login.css">
   <title>Log In</title>
 </head>
 
@@ -83,10 +84,9 @@ if (isset($_POST['send'])) {
     </div>
 
     <div class="formg">
-      <label for=""><b>Password:</b></label>
-      <input type="password" class="input" name="zpassword" placeholder="Password" id="lshow" maxlength="10" minlength="6">
-      <label for=""><input type="checkbox" name="" id="zshow">Show</label>
-      <a href="./admin/connectionadmin.php">Use Passkey</a>
+      <label for=""><b>Passkey:</b></label>
+      <input type="password" class="input" name="passkey" placeholder="Enter Passkey" id="show" value="<?php echo htmlspecialchars($pass); ?>">
+      <label for=""><input type="checkbox" name="" id="pshow">Show</label>
     </div>
 
     <button type="submit" name="send"><i class="fa-solid fa-user"></i> Log In</button><br><br>
@@ -104,10 +104,10 @@ if (isset($_POST['send'])) {
   
 }
 
-let a = document.getElementById('zshow')
-let aa = document.querySelector("input[name='zpassword']")
+let b = document.getElementById('pshow')
+let bb = document.querySelector("input[name='passkey']")
 
-show(a, aa)
+show(b, bb)
   </script>
 </body>
 

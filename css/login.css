@@ -4,16 +4,16 @@
 
 body {
   font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; 
+  justify-content: center; /* position elements on the x-axis */ 
+  align-items: center; /* position elements on the y-axis */ 
   min-height: 100vh;
   padding: 20px;
-  background-image: url(../img/bac.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: top;
+  background-image: url(../img/bac.jpg); /* the exact location of the image */
+  background-repeat: no-repeat; /* avoid repeating the image */
+  background-size: cover; /* make the image cover the entire background */
+  background-attachment: fixed; /* keep the background fixed while scrolling */
+  background-position: top; /* position the background at the top */
 }
 
 form {
